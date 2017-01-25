@@ -4,7 +4,7 @@
  * Mysql.
  */
 define("HOSTNAME", "localhost");// Nombre del host
-define("DATABASE", "u296877284_fran"); // Nombre de la base de datos
-define("USERNAME", "u296877284_fran"); // Nombre del usuario
-define("PASSWORD", "123456"); // Nombre de la constraseña
+define("DATABASE", "u600131417_prueb"); // Nombre de la base de datos
+define("USERNAME", "u600131417_vicer"); // Nombre del usuario
+define("PASSWORD", "vicersoftware"); // Nombre de la constraseÃ±a
 ?>
