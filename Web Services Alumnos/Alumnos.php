@@ -6,7 +6,7 @@
  */
 require 'Database.php';
 
-class Alumnos
+class usuario
 {
     function __construct()
     {
@@ -20,7 +20,7 @@ class Alumnos
      */
     public static function getAll()
     {
-        $consulta = "SELECT * FROM Alumnos";
+        $consulta = "SELECT * FROM usuario";
         try {
             // Preparar sentencia
             $comando = Database::getInstance()->getDb()->prepare($consulta);
@@ -35,20 +35,19 @@ class Alumnos
     }
 
     /**
-     * Obtiene los campos de un Alumno con un identificador
+     * Obtiene los campos de un usuario con un identificador
      * determinado
      *
-     * @param $idAlumno Identificador del alumno
+     * @param $cve_usuario Identificador del alumno
      * @return mixed
      */
-    public static function getById($idAlumno)
+    public static function getById($cve_usuario)
     {
         // Consulta de la tabla Alumnos
-        $consulta = "SELECT idAlumno,
-                            nombre,
-                            direccion
-                             FROM Alumnos
-                             WHERE idAlumno = ?";
+        $consulta = "SELECT cve_usuario,
+                            nombre
+                             FROM usuario
+                             WHERE cve_usuario = ?";
 
         try {
             // Preparar sentencia
@@ -60,7 +59,7 @@ class Alumnos
             return $row;
 
         } catch (PDOException $e) {
-            // Aquí puedes clasificar el error dependiendo de la excepción
+            // AquÃ­ puedes clasificar el error dependiendo de la excepciÃ³n
             // para presentarlo en la respuesta Json
             return -1;
         }
@@ -76,7 +75,7 @@ class Alumnos
      
      */
     public static function update(
-        $idAlumno,
+        $cve_usuario,
         $nombre,
         $direccion
     )
@@ -99,7 +98,7 @@ class Alumnos
      * Insertar un nuevo Alumno
      *
      * @param $nombre      nombre del nuevo registro
-     * @param $direccion dirección del nuevo registro
+     * @param $direccion direcciÃ³n del nuevo registro
      * @return PDOStatement
      */
     public static function insert(
@@ -129,7 +128,7 @@ class Alumnos
      * Eliminar el registro con el identificador especificado
      *
      * @param $idAlumno identificador de la tabla Alumnos
-     * @return bool Respuesta de la eliminación
+     * @return bool Respuesta de la eliminaciÃ³n
      */
     public static function delete($idAlumno)
     {
