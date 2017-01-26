@@ -102,15 +102,17 @@ class usuario
      * @return PDOStatement
      */
     public static function insert(
+        $email,
+        $password,
         $nombre,
-        $direccion
+        $pais,
+        $estado,
+        $fecha_nacimiento,
+        $estados
     )
     {
         // Sentencia INSERT
-        $comando = "INSERT INTO Alumnos ( " .
-            "nombre," .
-            " direccion)" .
-            " VALUES( ?,?)";
+        $comando = "INSERT INTO usuario ( " . "correo," . " nombre," . "sobrenombre," . " password," . " pais," . "estado_bienv," . " estado," . " nacimiento)" . " VALUES( ?,?,' ',?,?,':D',?,?)";
 
         // Preparar la sentencia
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
