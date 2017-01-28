@@ -3,7 +3,7 @@
  * Actualiza un alumno especificado por su identificador
  */
 
-require 'Alumnos.php';
+require 'Usuarios.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
