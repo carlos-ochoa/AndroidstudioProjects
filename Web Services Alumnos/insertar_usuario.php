@@ -3,7 +3,7 @@
  * Insertar un nuevo alumno en la base de datos
  */
 
-require 'Alumnos.php';
+require 'Usuarios.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -12,8 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Insertar Alumno
     $retorno = Alumnos::insert(
-        $body['nombre'],
-        $body['direccion']);
+        $body['email'],
+        $body['password'],
+	$body['nombre'],
+	$body['pais'],
+	$body['estado'],
+	$body['fecha_nacimiento'],
+	$body['estados']);
 
     if ($retorno) {
         $json_string = json_encode(array("estado" => 1,"mensaje" => "Creacion correcta"));
