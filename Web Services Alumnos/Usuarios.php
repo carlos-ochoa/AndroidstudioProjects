@@ -74,22 +74,21 @@ class usuario
      * @param $direccion nueva direccion
      
      */
-    public static function update(
+    public static function updateEstado(
         $cve_usuario,
-        $nombre,
-        $direccion
+        $estado,
     )
     {
         // Creando consulta UPDATE
-        $consulta = "UPDATE Alumnos" .
-            " SET nombre=?, direccion=? " .
-            "WHERE idAlumno=?";
+        $consulta = "UPDATE usuario" .
+            " SET estado_bienv = ? " .
+            "WHERE cve_usuario = ?";
 
         // Preparar la sentencia
         $cmd = Database::getInstance()->getDb()->prepare($consulta);
 
         // Relacionar y ejecutar la sentencia
-        $cmd->execute(array($nombre, $direccion, $idAlumno));
+        $cmd->execute(array($estado, $cve_usuario));
 
         return $cmd;
     }
@@ -119,8 +118,13 @@ class usuario
 
         return $sentencia->execute(
             array(
+                $email,
+                $password,
                 $nombre,
-                $direccion
+                $pais,
+                $estado,
+                $fecha_nacimiento,
+                $estados
             )
         );
 
