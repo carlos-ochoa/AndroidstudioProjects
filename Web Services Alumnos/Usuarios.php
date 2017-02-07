@@ -76,7 +76,7 @@ class usuario
      */
     public static function updateEstado(
         $cve_usuario,
-        $estado,
+        $estado
     )
     {
         // Creando consulta UPDATE
