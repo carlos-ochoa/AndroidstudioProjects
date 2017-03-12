@@ -120,12 +120,13 @@ class usuario
         return $sentencia->execute(
             array(
                 $email,
-                $password,
                 $nombre,
+                $sobrenombre,
+                $password,
                 $pais,
+                $estado_bienv,
                 $estado,
-                $fecha_nacimiento,
-                $estados
+                $fecha_nacimiento
             )
         );
 
