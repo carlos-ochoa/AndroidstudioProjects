@@ -13,12 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Insertar Alumno
     $retorno = Usuarios::insert(
         $body['email'],
-        $body['password'],
 	$body['nombre'],
+	$body['sobrenombre'],
+        $body['password'],
 	$body['pais'],
-	$body['estado'],
-	$body['fecha_nacimiento'],
-	$body['estados']);
+	$body['estado_bienv'],
+	$body['estado'],    
+	$body['fecha_nacimiento']
+	);
 
     if ($retorno) {
         $json_string = json_encode(array("estado" => 1,"mensaje" => "Creacion correcta"));
