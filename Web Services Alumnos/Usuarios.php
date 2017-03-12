@@ -112,7 +112,7 @@ class usuario
     )
     {
         // Sentencia INSERT
-        $comando = "INSERT INTO usuario ( " . "correo," . " nombre," . "sobrenombre," . " password," . " pais," . "estado_bienv," . " estado," . " nacimiento") . " VALUES( ?,?,?,?,?,?,?,?)";
+        $comando = "INSERT INTO usuario "(" . "correo," . " nombre," . "sobrenombre," . " password," . " pais," . "estado_bienv," . " estado," . " nacimiento")" . " VALUES( ?,?,?,?,?,?,?,?)";
 
         // Preparar la sentencia
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
