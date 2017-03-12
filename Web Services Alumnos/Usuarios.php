@@ -102,12 +102,13 @@ class usuario
      */
     public static function insert(
         $email,
-        $password,
         $nombre,
+        $sobrenombre,
+        $password,
         $pais,
+        $estado_bienv,
         $estado,
-        $fecha_nacimiento,
-        $estados
+        $fecha_nacimiento
     )
     {
         // Sentencia INSERT
